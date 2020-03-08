@@ -1,7 +1,9 @@
 <%= form_with(model: @message, local: true) do |f| %>
   <%= f.text_field :message %>
-  <%= f.fields_for :images do |i| %>
-    <%= i.file_field :image %>
-  <% end %>
+  <div class="aaa">
+    <%= f.fields_for :images, class: "aaa" do |i| %>
+      <%= i.file_field :image %>
+    <% end %>
+  </div>
   <%= f.submit "投稿" %>
 <% end %>
