@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'users/index'
-  root "users#index"
+  root 'messages#index'
+  resources :messages, only: [:index, :new, :create]
 end
