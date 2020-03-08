@@ -6,3 +6,9 @@
   <%= link_to '新規登録', new_user_registration_path %>
   <%= link_to 'ログイン', new_user_session_path %>
 <% end %>
+<% @messages.each do |m| %>
+  <div><span style="color: red;"><%= m.user.email %></span><%= m.message %></div>
+  <% m.images.each do |i| %>
+    <%= image_tag i.image.url %>   
+  <% end %>
+<% end %>
