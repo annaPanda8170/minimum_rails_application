@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
   before_action :to_root, except: [:index]
   def index
-    
+    @messages = Message.all
   end
   def new
     @message = Message.new
