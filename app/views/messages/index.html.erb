@@ -1,6 +1,15 @@
 <% if user_signed_in? %>
   <%= current_user.email %>
   <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+  <%= form_with(model: @message, local: true, class: "form") do |f| %>
+    <%= f.text_field :message %>
+    <%= f.submit "投稿" , id: "bbb"%>
+  <% end %>
+  <div id="aaa">
+    <% @messages.each do |m| %>
+      <div style="margin-top: 20px;"><span style="color: red;"><%= m.user.email %> </span><%= m.message %></div>
+    <% end %>
+  </div>
 <% else %>
   <%= link_to '新規登録', new_user_registration_path %>
   <%= link_to 'ログイン', new_user_session_path %>
