@@ -7,7 +7,7 @@ RSpec.describe User, type: :model do
   end
 
 
-  it "ng" do
+  it "ng1" do
     user = User.new(email: "a@@a")
     user.valid?
     expect(user.errors[:email]).to include("is invalid")
@@ -16,7 +16,7 @@ RSpec.describe User, type: :model do
 
 
 
-  it "ng" do
+  it "ng2" do
     user = User.new(email: "a@@a")
     user.valid?
     expect(user.errors[:password]).to include("can't be blank")
