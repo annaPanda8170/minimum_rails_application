@@ -1,7 +1,7 @@
 <%= form_with(model: @message, local: true) do |f| %>
   <%= f.text_field :message %>
   <div class="aaa">
-    <%= f.fields_for :images, class: "aaa" do |i| %>
+    <%= f.fields_for :images do |i| %>
       <%= i.file_field :image %>
     <% end %>
   </div>
